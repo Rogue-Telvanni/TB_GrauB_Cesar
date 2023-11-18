@@ -6,14 +6,11 @@ def run():
     hash_set = get_dicio_data()
     print("Leitura Finalizada")
     while True:
-        words = input("digite a palavra ou texto a ser criptografada, sera usado força bruta para tentar descriptografala\n")
-        chave = int(input("digite a chave, ela deve ser um numero\n"))
+        words = input("digite a palavra ou texto a ser descriptografada\n")
         for word in words.split(" "):
             if not word or not word.isspace():
-                print(f"palavra teste {word}")
-                cipher = Cifra_de_Cesar.cipher_word(word, chave)
-                print(f"cifra gerada: {cipher}")
-                resultado = Cifra_de_Cesar.brute_force(cipher, hash_set)
+                print(f"palavra a ser descriptografada {word}")
+                resultado = Cifra_de_Cesar.brute_force(word, hash_set)
                 print(f"Resultado da força bruta: {resultado}")
 
 
